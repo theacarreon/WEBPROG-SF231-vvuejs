@@ -2,7 +2,6 @@
     <div class="mangoes">
       <h2>{{ name }}</h2>  
       <p>{{ message }}</p>
-      <p id="red">You have clicked me {{ clicks }} times.</p>
     </div>
   </template>
   
@@ -13,11 +12,6 @@
         name: 'Mangoes',
         message: 'I like Mangoes',
         clicks: 0
-      }
-    },
-    methods: {
-      countClicks() {
-        this.clicks++;
       }
     }
   }

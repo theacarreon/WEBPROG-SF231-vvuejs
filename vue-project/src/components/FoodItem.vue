@@ -2,7 +2,6 @@
     <div class="apple">
       <h2>{{ name }}</h2>  
       <p>{{ message }}</p>
-      <p id="red">You have clicked me {{ clicks }} times.</p>
     </div>
   </template>
   
@@ -14,11 +13,6 @@
         message: 'I like apples',
         clicks: 0
       }
-    },
-    methods: {
-      countClicks() {
-        this.clicks++;
-      }
     }
   }
   </script>
@@ -29,7 +23,7 @@
     display: inline-block;
     margin: 10px;
     padding: 10px;
-    background-color: lightred;
+    background-color: red;
   }
 
   </style>
