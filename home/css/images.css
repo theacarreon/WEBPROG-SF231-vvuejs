@@ -3,20 +3,21 @@
     width: 100%;
     padding: 10px;
     display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping, keeping items in a row */
-    justify-content: center; /* Centers items horizontally */
-    overflow-x: auto; /* Adds horizontal scrolling if needed */
-    gap: 15px; /* Adds spacing between items */
+    flex-direction: row; /* Ensure items are in a row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center; /* Center items horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    gap: 15px; /* Space between items */
 }
 
 figure {
-    width: 120px; /* Adjust width as needed */
-    padding: 10px;
-    margin: 0; /* Removes extra space */
+    width: 120px; /* Adjust based on your preference */
     background-color: lightskyblue;
+    padding: 10px;
+    margin: 0;
     border-radius: 5px;
     text-align: center;
-    flex: 0 0 auto; /* Prevents items from shrinking */
+    flex: 0 0 auto; /* Prevents shrinking */
 }
 
 figcaption {
