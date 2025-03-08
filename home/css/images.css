@@ -1,24 +1,29 @@
-#app > div {
+#app2 > div {
     border: solid black 1px;
-    width: 80%;
+    width: 100%;
     padding: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap; /* Prevents wrapping, keeping items in a row */
+    justify-content: center; /* Centers items horizontally */
+    overflow-x: auto; /* Adds horizontal scrolling if needed */
+    gap: 15px; /* Adds spacing between items */
 }
 
 figure {
-    width: 80px;
+    width: 120px; /* Adjust width as needed */
     padding: 10px;
-    margin: 10px;
+    margin: 0; /* Removes extra space */
     background-color: lightskyblue;
     border-radius: 5px;
+    text-align: center;
+    flex: 0 0 auto; /* Prevents items from shrinking */
 }
 
 figcaption {
     text-align: center;
 }
-  
+
 img {
     width: 100%;
+    border-radius: 5px;
 }
