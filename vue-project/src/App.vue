@@ -1,15 +1,13 @@
-<script></script>
- 
 <template>
   <h1>Food</h1>
-  <PersonalProfile/>
+  <country/>
   <food-item/>
-  <food-item2/>
   <food-item/>
+  <food-item/>
+  <comment-form/>
+  <comment/>
+   
+
 </template>
- 
-<style>
-  #app > div:hover {
-    cursor: pointer;
-  }
-</style>
+
+<script></script>
