@@ -1,5 +1,4 @@
 <template>
-    <h1>Comments</h1>
   <h1>Comments</h1>
   <ul>
     <li v-for="comment in comments" :key="comment.id">
