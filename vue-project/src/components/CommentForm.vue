@@ -53,7 +53,8 @@
     submissionStatus.value = "An unexpected error occurred. Please try again.";
   }
 }
-  
+</script>
+<style>
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -74,4 +75,4 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  </style>
+</style>
