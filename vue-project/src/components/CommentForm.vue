@@ -31,7 +31,9 @@
   // Your Supabase URL and Key - IMPORTANT!
   const tableName = 'comments'; // Name of your Supabase table
   
- async function submitComment() {
+const emit = defineEmits(["comment-submitted"]);
+
+async function submitComment() {
   submissionStatus.value = "Submitting...";
 
   try {
@@ -44,15 +46,16 @@
       submissionStatus.value = "Error submitting comment. Please try again.";
     } else {
       submissionStatus.value = "Comment submitted successfully!";
-      name.value = ""; // Clear input fields
+      name.value = ""; 
       comment.value = "";
-      await getComments(); // Fetch updated comments list
+      emit("comment-submitted"); // Notify parent component to refresh
     }
   } catch (err) {
     console.error("An unexpected error occurred:", err);
     submissionStatus.value = "An unexpected error occurred. Please try again.";
   }
 }
+
 </script>
 <style>
   label {

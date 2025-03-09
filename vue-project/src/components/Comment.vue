@@ -1,39 +1,35 @@
 <template>
     <h1>Comments</h1>
-<ul>
-  <li v-for="comment in comments" :key="comment.id">
-    {{ comment.name }}: {{ comment.comment }}
-  </li>
-</ul>
-
-<p v-if="comments.length === 0">No comments yet.</p>
-
-<!-- Debugging output -->
-<pre>{{ comments }}</pre>
+  <h1>Comments</h1>
+  <ul>
+    <li v-for="comment in comments" :key="comment.id">
+      {{ comment.name }}: {{ comment.comment || "No comment provided" }}
+    </li>
+  </ul>
 </template>
 
 <script setup>
-    import { ref, onMounted } from 'vue'
-    import { supabase } from '../lib/supabaseClient'
+import { ref, onMounted } from "vue";
+import { supabase } from "../lib/supabaseClient";
 
-    const comments = ref([])
+const comments = ref([]);
 
 async function getComments() {
   const { data, error } = await supabase.from("comments").select();
 
   if (error) {
     console.error("Error fetching comments:", error);
-    return;
+  } else {
+    comments.value = data;
   }
-
-  comments.value = data; // Update the comments array
 }
 
-    onMounted(() => {
-    getComments()
-    })
+onMounted(() => {
+  getComments();
+});
 
 </script>
+
 
 
 <style>
