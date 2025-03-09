@@ -1,8 +1,15 @@
 <template>
     <h1>Comments</h1>
-    <ul>
-      <li v-for="comment in comments" :key="comment.id">{{ comment.name }} {{ comment.comment }}</li>
-    </ul>
+<ul>
+  <li v-for="comment in comments" :key="comment.id">
+    {{ comment.name }}: {{ comment.comment }}
+  </li>
+</ul>
+
+<p v-if="comments.length === 0">No comments yet.</p>
+
+<!-- Debugging output -->
+<pre>{{ comments }}</pre>
 </template>
 
 <script setup>
@@ -11,9 +18,15 @@
 
     const comments = ref([])
 
-    async function getComments() {
-  const { data } = await supabase.from('comments').select()
-  comments.value = data
+async function getComments() {
+  const { data, error } = await supabase.from("comments").select();
+
+  if (error) {
+    console.error("Error fetching comments:", error);
+    return;
+  }
+
+  comments.value = data; // Update the comments array
 }
 
     onMounted(() => {
